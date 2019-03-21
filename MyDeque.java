@@ -26,7 +26,7 @@ public class MyDeque<E>{
     String output = "[";
 
     for(int i = start; i <= end; i++){
-      output += data[i];
+      output += "" + data[i];
       if( i != end){
         output += " ";
       }
@@ -41,6 +41,8 @@ public class MyDeque<E>{
     start++;
     data[temp] = element;
     size++;
+    end++;
+
   }
 
   public void addLast( E element){
@@ -56,7 +58,6 @@ public class MyDeque<E>{
     start++;
     size--;
     return data[temp];
-
 
   }
 
@@ -79,7 +80,23 @@ public class MyDeque<E>{
   }
 
   public static void main(String[] args){
-    MyDeque m = new MyDeque();
+    MyDeque<String> m = new MyDeque<String>();
+    System.out.println(m);
+    System.out.println(m.start);
+    System.out.println(m.end);
+    System.out.println();
+    m.addFirst("5");
+    System.out.println(m.start);
+    System.out.println(m.end);
+    System.out.println();
+    m.addFirst("4");
+    System.out.println(m.start);
+    System.out.println(m.end);
+    System.out.println();
+    m.addLast("6");
+    System.out.println(m.start);
+    System.out.println(m.end);
+    System.out.println();
     System.out.println(m);
   }
 
