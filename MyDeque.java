@@ -23,17 +23,16 @@ public class MyDeque<E>{
   }
 
   public String toString() {
-    String output = "[";
+    int index = start;
+    String output = "{";
 
-    for(int i = start; i <= end; i++){
-      output += "" + data[i];
-      if( i != end){
-        output += " ";
+    while((index <= end) || (end < start && index > end)) {
+      if(index >= data.length) index = 0;
+      if(data[index] != null) output += data[index] + " ";
+        index++;
       }
 
-    }
-    return output + "]";
-
+    return output + "}";
   }
 
   public void addFirst(E element){
@@ -86,18 +85,21 @@ public class MyDeque<E>{
     System.out.println(m.end);
     System.out.println();
     m.addFirst("5");
+    System.out.println(m);
     System.out.println(m.start);
     System.out.println(m.end);
     System.out.println();
     m.addFirst("4");
+    System.out.println(m);
     System.out.println(m.start);
     System.out.println(m.end);
     System.out.println();
     m.addLast("6");
+    System.out.println(m);
     System.out.println(m.start);
     System.out.println(m.end);
     System.out.println();
-    System.out.println(m);
+
   }
 
 
