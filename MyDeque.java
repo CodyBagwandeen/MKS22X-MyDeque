@@ -24,7 +24,7 @@ public class MyDeque<E>{
 
   public String toString() {
     int index = start;
-    String output = "{";
+    String output = "[";
 
     while((index <= end) || (end < start && index > end)) {
       if(index >= data.length) index = 0;
@@ -32,10 +32,13 @@ public class MyDeque<E>{
         index++;
       }
 
-    return output + "}";
+    return output + "]";
   }
 
   public void addFirst(E element){
+    if( element == null){
+      throw new NullPointerException();
+    }
     int temp = start;
     start++;
     data[temp] = element;
@@ -45,6 +48,9 @@ public class MyDeque<E>{
   }
 
   public void addLast( E element){
+    if( element == null){
+      throw new NullPointerException();
+    }
     int temp = end;
     end++;
     size++;
