@@ -99,6 +99,30 @@ public class MyDeque<E>{
 
   }
 
+  public void resize() {
+    @SuppressWarnings("unchecked")
+    E[] temp = (E[]) new Object[data.length * 2 + 1];
+
+    int index = start;
+    int j = 0;
+
+    while((index <= end) || (end < start && index > end)) {
+        if(index == end + 1) return;
+
+        if(index >= data.length) {
+          index = 0;
+        }
+        temp[j] = data[index];
+        index++;
+        j++;
+      }
+
+      start = 0; end = data.length - 2;
+      data = temp;
+   }
+
+
+
   public static void main(String[] args){
     MyDeque<String> m = new MyDeque<String>();
     System.out.println(m);
