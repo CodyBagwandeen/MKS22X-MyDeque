@@ -33,7 +33,7 @@ public class MyDeque<E>{
       if(index >= data.length) index = 0;
       if(data[index] != null) output += data[index] + " ";
         index++;
-      }
+    }
 
     return output + "]";
   }
@@ -57,13 +57,16 @@ public class MyDeque<E>{
   }
 
   public void addLast( E element){
-    if( element == null){
-      throw new NullPointerException();
-    }
-    int temp = end;
-    end++;
-    size++;
-    data[temp] = element;
+    if(element == null) throw new NullPointerException();
+        if(size() == data.length - 1) resize();
+
+        if(data[end] != null) {
+            if(end + 1 >= data.length) end = -1;
+            end += 1;
+        }
+
+        size += 1;
+        data[end] = element;
 
   }
 
