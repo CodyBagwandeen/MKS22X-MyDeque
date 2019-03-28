@@ -88,9 +88,8 @@ public class MyDeque<E>{
     end = (end + 1) % data.length;
     data[end] = element;
     size++;
-    
-  }
 
+  }
 
   @SuppressWarnings("unchecked")
   private void resize(){
@@ -105,6 +104,7 @@ public class MyDeque<E>{
     data = newdata;
 
   }
+
   public E removeFirst(){
     if (data.length == 0 || size() == 0){
       throw new NoSuchElementException();
@@ -118,6 +118,7 @@ public class MyDeque<E>{
     return temp;
 
   }
+
   public E removeLast(){
     if (data.length == 0 || size() == 0){
       throw new NoSuchElementException();
@@ -131,7 +132,7 @@ public class MyDeque<E>{
     return temp;
 
   }
-  // accessor methods
+
   public E getFirst(){
     if (data.length == 0 || size() == 0){
       throw new NoSuchElementException();
