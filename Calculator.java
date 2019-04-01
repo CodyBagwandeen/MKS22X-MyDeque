@@ -33,4 +33,9 @@ public class Calculator{
     return s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/") || s.equals("%");
   }
 
+  public static void main(String[] args) {
+       System.out.println(eval("10 5.0 +"));                   // 15.0
+       System.out.println(eval("11 3 - 4 + 4 *"));             // 48.0
+       System.out.println(eval("1 21 3 4 5 + * - -"));         // 7.0
+   }
 }
